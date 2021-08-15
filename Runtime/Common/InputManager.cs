@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
-namespace Assets.Scripts
+namespace PotatoTools
 {
     public enum ButtonEnum
     {

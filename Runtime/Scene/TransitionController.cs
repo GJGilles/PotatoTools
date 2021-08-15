@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Controllers
+namespace PotatoTools.Scene
 {
     public class TransitionController : MonoBehaviour
     {

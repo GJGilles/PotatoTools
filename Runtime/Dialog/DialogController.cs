@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Dialog
+namespace PotatoTools.Dialog
 {
     public enum DialogStateEnum
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Controllers.Character
+namespace PotatoTools.Character
 {
     public class CharacterAnimationController : MonoBehaviour
     {

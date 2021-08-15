@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Types
+namespace PotatoTools
 {
     public class ItemStack
     {

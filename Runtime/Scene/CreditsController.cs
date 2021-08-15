@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Common
+namespace PotatoTools.Scene
 {
     public class CreditsController : MonoBehaviour
     {

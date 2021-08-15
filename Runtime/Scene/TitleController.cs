@@ -3,7 +3,7 @@ using Assets.Scripts.Service;
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Controllers.Title
+namespace PotatoTools.Scene
 {
     public class TitleController : ActionList
     {

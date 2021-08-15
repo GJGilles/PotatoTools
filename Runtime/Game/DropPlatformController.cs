@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Controllers
+namespace PotatoTools.Game
 {
     public class DropPlatformController : MonoBehaviour
     {

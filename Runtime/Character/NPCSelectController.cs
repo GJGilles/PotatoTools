@@ -4,7 +4,7 @@ using Assets.Scripts.Types;
 using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Controllers.Character
+namespace PotatoTools.Character
 {
     public class NPCSelectController : SelectableController
     {

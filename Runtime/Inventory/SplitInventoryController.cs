@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Inventory
+namespace PotatoTools.Inventory
 {
     public class SplitInventoryController : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Dialog
+namespace PotatoTools.Dialog
 {
     [Serializable]
     public class DialogBlock

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Controllers
+namespace PotatoTools.Game
 {
     public class CameraFollow : MonoBehaviour
     {

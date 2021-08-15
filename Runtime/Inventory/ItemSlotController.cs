@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Inventory
+namespace PotatoTools.Inventory
 {
     public class ItemSlotController : MonoBehaviour
     {
