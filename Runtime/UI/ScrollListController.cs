@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace PotatoTools.UI
 {
     public class ScrollListController : MonoBehaviour
     {

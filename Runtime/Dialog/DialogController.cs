@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Objects;
-using Assets.Scripts.Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -41,13 +39,13 @@ namespace PotatoTools.Dialog
         {
             canvas.worldCamera = Camera.current;
 
-            AddCharacter(dialog.characters[0].sprite).anchoredPosition = new Vector2(-cArea.rect.width / 4, 100);
+            AddCharacter(dialog.characters[0]).anchoredPosition = new Vector2(-cArea.rect.width / 4, 100);
             for (int i = 1; i < dialog.characters.Count; i++)
             {
                 int count = dialog.characters.Count - 1;
                 int idx = i - 1;
 
-                AddCharacter(dialog.characters[i].sprite).anchoredPosition = 
+                AddCharacter(dialog.characters[i]).anchoredPosition = 
                     new Vector2((cArea.rect.width / 4) + (idx - ((count - 1) / 2)) * spacing, 100);
             }
         }
@@ -187,7 +185,6 @@ namespace PotatoTools.Dialog
             }
             else
             {
-                QuestService.DoUnlock(dialog.unlocks);
                 OnClose.Invoke();
                 Destroy(gameObject);
             }

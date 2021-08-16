@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Common;
-using Assets.Scripts.Service;
-using System.Collections;
+﻿using PotatoTools.UI;
 using UnityEngine;
 
 namespace PotatoTools.Scene

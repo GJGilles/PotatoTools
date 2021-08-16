@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Types;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -12,15 +11,14 @@ namespace PotatoTools
         private static int slot = 0;
         private static List<DataService> services = new List<DataService>();
 
-        static FileService()
-        {
-            services.Add(new ItemService.Data().GetService());
-            services.Add(new CharacterService.Data().GetService());
-        }
-
         private static string GetPath(string slot)
         {
             return Application.persistentDataPath + "/" + slot + "/";
+        }
+
+        public static void Add(DataService data)
+        {
+            services.Add(data);
         }
 
         public static bool Save()

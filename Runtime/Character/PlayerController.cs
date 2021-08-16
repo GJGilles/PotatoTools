@@ -1,8 +1,6 @@
-﻿using Assets.Scripts.Inventory;
-using Assets.Scripts.Service;
-using Assets.Scripts.Types;
-using System.Collections;
-using System.Threading.Tasks;
+﻿using PotatoTools.Game;
+using PotatoTools.Inventory;
+using PotatoTools.UI;
 using UnityEngine;
 
 namespace PotatoTools.Character

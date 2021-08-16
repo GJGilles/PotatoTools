@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Dialog;
-using Assets.Scripts.Objects;
-using Assets.Scripts.Types;
+﻿using PotatoTools.Dialog;
 using System;
 using UnityEngine;
 

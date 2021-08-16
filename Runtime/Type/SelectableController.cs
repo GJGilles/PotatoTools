@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Controllers.Character;
-using System.Collections;
+﻿using PotatoTools.Character;
 using UnityEngine;
 
 namespace PotatoTools

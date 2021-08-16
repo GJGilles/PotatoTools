@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Common
+namespace PotatoTools.UI
 {
     public class ActionList : MonoBehaviour
     {

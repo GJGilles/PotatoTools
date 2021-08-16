@@ -1,9 +1,10 @@
-﻿using System;
+﻿using PotatoTools.Scene;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Controllers
+namespace PotatoTools.UI
 {
     public class PauseController : ActionList
     {
