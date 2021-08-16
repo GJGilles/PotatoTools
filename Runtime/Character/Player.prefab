@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7151228055694602576}
   - component: {fileID: 7151228055694602577}
-  - component: {fileID: 7151228055694602582}
   - component: {fileID: 7151228055694602580}
+  - component: {fileID: 7151228055694602582}
   - component: {fileID: 7151228055694602583}
   - component: {fileID: 7151228055694602586}
   - component: {fileID: 7151228055694602587}
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7151228055694602579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b8695fb1c4127148a448f8b7ab8d23e, type: 3}
+  m_Script: {fileID: 11500000, guid: d3eb8ed02dfb854479c61b856fff0351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0.5
   jump: 5
   groundMask:
     serializedVersion: 2
@@ -58,9 +58,23 @@ MonoBehaviour:
   col: {fileID: 7151228055694602586}
   timeGround: 0.3
   timeJump: 0.3
-  pause: {fileID: 7620792942266377357, guid: 8eaf9c5df68e45b499286f04af962ec6, type: 3}
+  pause: {fileID: 7620792942266377357, guid: 48bb84c4cba21ea4594075c7c76a1b18, type: 3}
   dropTime: 1
   isLocked: 0
+--- !u!114 &7151228055694602580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151228055694602579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7474bc3f0355b1b47bc76cd5343e90b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spr: {fileID: 7151228055694602582}
+  anim: {fileID: 7151228055694602583}
 --- !u!212 &7151228055694602582
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -112,20 +126,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7151228055694602580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7151228055694602579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8313bd6dc6b8246a8593ddc486c601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spr: {fileID: 7151228055694602582}
-  anim: {fileID: 7151228055694602583}
 --- !u!95 &7151228055694602583
 Animator:
   serializedVersion: 3

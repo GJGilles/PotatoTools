@@ -185,11 +185,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7055164972008741484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c343879c85748314da2b72df62576369, type: 3}
+  m_Script: {fileID: 11500000, guid: 64577f2219f8964428a338e0378e4821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 7055164972008741487}
   background: {fileID: 1964493244657101611}
-  slotObj: {fileID: 8811157433831801540, guid: 47d253c3c58c3984c8e288eef1c6c93f, type: 3}
+  slotObj: {fileID: 8811157433831801540, guid: d00f3b758980f16408200823793ea435, type: 3}
   padding: 16
   coolTime: 0.2

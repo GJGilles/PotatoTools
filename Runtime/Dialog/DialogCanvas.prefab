@@ -110,15 +110,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6136237456213587105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744fab2c940b407439dd8991fc4fbe75, type: 3}
+  m_Script: {fileID: 11500000, guid: 02775f708d852aa4f902fae558319316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 6136237456213587106}
   area: {fileID: 6136237456273945286}
   cArea: {fileID: 6136237457048079163}
   tArea: {fileID: 678942066509672504}
-  textObj: {fileID: 7787428209240752603, guid: b28509f217819f840be77efd8fe2350c, type: 3}
-  speed: 8
+  textObj: {fileID: 7787428209240752603, guid: 232dfec3187410e40ade22b50b7f6248, type: 3}
+  speed: 0.3
   spacing: 64
 --- !u!1 &6136237456273945287
 GameObject:
