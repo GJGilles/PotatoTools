@@ -190,6 +190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 7055164972008741487}
   background: {fileID: 1964493244657101611}
-  slotObj: {fileID: 8811157433831801540, guid: d00f3b758980f16408200823793ea435, type: 3}
+  slotObj: {fileID: 8811157433831801540, guid: 47d253c3c58c3984c8e288eef1c6c93f, type: 3}
   padding: 16
   coolTime: 0.2
