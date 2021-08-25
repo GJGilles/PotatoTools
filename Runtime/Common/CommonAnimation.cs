@@ -7,6 +7,7 @@ namespace PotatoTools
     {
         public static bool DampedMove(Vector2 a, Vector2 b, out Vector2 c, float rate = 0.03f, float threshold = 0.1f) 
         {
+            rate *= Time.deltaTime * 100;
             c = Vector2.Lerp(a, b, rate);
             return Mathf.Abs((a - b).magnitude) < threshold;
         }
