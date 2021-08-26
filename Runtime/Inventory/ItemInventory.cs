@@ -222,7 +222,10 @@ namespace PotatoTools.Inventory
 
         public void Load(InventoryData data)
         {
+            capacity = data.capacity;
+            infinite = data.infinite;
 
+            items = data.items.Select(x => x == null ? null : new ItemStack(ItemService.Get(x.item), x.number)).ToList();
         }
     }
 
