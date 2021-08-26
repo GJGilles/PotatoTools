@@ -10,7 +10,6 @@ namespace PotatoTools
         public RuntimeAnimatorController animator;
         public Sprite sprite;
 
-        public List<DialogObject> dialogs = new List<DialogObject>();
-        public int state = 0;
+        public Stack<DialogObject> dialogs = new Stack<DialogObject>();
     }
 }

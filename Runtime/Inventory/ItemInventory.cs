@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -207,5 +209,36 @@ namespace PotatoTools.Inventory
             while (selected >= items.Count) selected -= items.Count;
             while (selected < 0) selected += items.Count;
         }
+
+        public InventoryData Save()
+        {
+            return new InventoryData()
+            {
+                capacity = capacity,
+                infinite = infinite,
+                items = items.Select(x => new StackData() { item = x.item.GetHashCode(), number = x.number }).ToList()
+            };
+        }
+
+        public void Load(InventoryData data)
+        {
+
+        }
+    }
+
+    [Serializable]
+    public class StackData
+    {
+        public int item;
+        public int number;
+    }
+
+    [Serializable]
+    public class InventoryData
+    {
+        public int capacity;
+        public bool infinite;
+
+        public List<StackData> items;
     }
 }
