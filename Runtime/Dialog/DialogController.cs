@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PotatoTools.Character;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,7 +18,6 @@ namespace PotatoTools.Dialog
     public class DialogController : MonoBehaviour
     {
         [NonSerialized] public DialogObject dialog;
-        [NonSerialized] public UnityEvent OnClose = new UnityEvent();
 
         public Canvas canvas;
         public RectTransform area;
@@ -48,6 +48,13 @@ namespace PotatoTools.Dialog
                 AddCharacter(dialog.characters[i]).anchoredPosition = 
                     new Vector2((cArea.rect.width / 4) + (idx - ((count - 1) / 2)) * spacing, 100);
             }
+
+            PlayerService.Lock();
+        }
+
+        private void OnDestroy()
+        {
+            PlayerService.Unlock();
         }
 
         private RectTransform AddCharacter(Sprite spr)
@@ -185,7 +192,6 @@ namespace PotatoTools.Dialog
             }
             else
             {
-                OnClose.Invoke();
                 Destroy(gameObject);
             }
         }

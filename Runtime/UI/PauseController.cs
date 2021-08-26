@@ -1,4 +1,5 @@
-﻿using PotatoTools.Scene;
+﻿using PotatoTools.Character;
+using PotatoTools.Scene;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,6 @@ namespace PotatoTools.UI
 {
     public class PauseController : ActionList
     {
-        [NonSerialized] public UnityEvent OnClose = new UnityEvent();
-
         protected override void Start()
         {
             base.Start();
@@ -21,6 +20,8 @@ namespace PotatoTools.UI
             actions.Add(Save);
             actions.Add(Title);
             actions.Add(Exit);
+
+            PlayerService.Lock();
         }
 
         protected override void Update()
@@ -36,7 +37,7 @@ namespace PotatoTools.UI
         private void OnDestroy()
         {
             Time.timeScale = 1;
-            OnClose.Invoke();
+            PlayerService.Unlock();
         }
 
         private void Save()

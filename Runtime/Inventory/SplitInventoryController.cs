@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PotatoTools.Character;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +10,6 @@ namespace PotatoTools.Inventory
     {
         [NonSerialized] public List<int> widths = new List<int>();
         [NonSerialized] public List<ItemInventory> inventories = new List<ItemInventory>();
-        [NonSerialized] public UnityEvent OnClose = new UnityEvent();
 
         public Canvas canvas;
         public RectTransform background;
@@ -82,6 +82,13 @@ namespace PotatoTools.Inventory
             }
 
             SetSelect(current, inventories[current].GetLocation());
+
+            PlayerService.Lock();
+        }
+
+        private void OnDestroy()
+        {
+            PlayerService.Unlock();
         }
 
         private void Update()
@@ -143,7 +150,6 @@ namespace PotatoTools.Inventory
 
         private void Close()
         {
-            OnClose.Invoke();
             if (held != null)
             {
                 inventories[last.Item1].Add(StackMoveEnum.All, held.Get(), last.Item2);

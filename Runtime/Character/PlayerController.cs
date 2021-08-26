@@ -10,23 +10,21 @@ namespace PotatoTools.Character
         public PauseController pause;
         public ItemVacuumController vacuum;
 
-        public ItemInventory inventory = new ItemInventory(8);
         public float dropTime = 1f;
-        public bool isLocked = false;
 
         private DropPlatformController platform;
         private SelectableController selection;
 
         private void Start()
         {
-            vacuum.inventory = inventory;
+            vacuum.inventory = PlayerService.GetInventory();
         }
 
         protected override void Update()
         {
             base.Update();
 
-            if (isLocked) return;
+            if (PlayerService.IsLocked()) return;
 
             Vector2 input = InputManager.GetMovement();
             SetMove(Mathf.RoundToInt(input.x));
@@ -47,9 +45,7 @@ namespace PotatoTools.Character
 
             if (InputManager.GetButtonTrigger(ButtonEnum.Start))
             {
-                var inst = Instantiate(pause);
-                inst.OnClose.AddListener(() => isLocked = false);
-                isLocked = true;
+                Instantiate(pause);
             }
         }
 

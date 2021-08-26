@@ -11,10 +11,10 @@ namespace PotatoTools.Character
 
         public override void Select(PlayerController player)
         {
+            CharacterService.OnDialog.Invoke(character);
+
             var inst = Instantiate(dialog);
             inst.dialog = character.dialogs.Pop();
-            inst.OnClose.AddListener(() => player.isLocked = false);
-            player.isLocked = true;
         }
     }
 }

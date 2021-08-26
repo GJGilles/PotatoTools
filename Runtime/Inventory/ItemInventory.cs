@@ -197,6 +197,63 @@ namespace PotatoTools.Inventory
             return stack;
         }
 
+        public bool CanPull(ItemStack stack)
+        {
+            int num = stack.number; 
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i] == null || items[i].item != stack.item)
+                {
+                    continue;
+                }
+                else
+                {
+                    int count = items[i].number;
+                    if (count >= num)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        num -= count;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public ItemStack TryPull(ItemStack stack)
+        {
+            int num = stack.number;
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i] == null || items[i].item != stack.item)
+                {
+                    continue;
+                }
+                else
+                {
+                    int count = items[i].number;
+                    if (count >= num)
+                    {
+                        for (int j = 0; j < num; j++) Remove(StackMoveEnum.One, i);
+                        return stack;
+                    }
+                    else
+                    {
+                        Remove(StackMoveEnum.All, i);
+                        num -= count;
+                    }
+                }
+            }
+
+            if (num == 0) return null;
+
+            stack.number -= num;
+            return stack;
+        }
+
         public void SetPermanent(int idx, ItemObject item)
         {
             infinite = true;
