@@ -149,6 +149,32 @@ namespace PotatoTools.Inventory
             }
         }
 
+        public bool CanPush(ItemStack stack)
+        {
+            int num = stack.number; 
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i] != null && items[i].item != stack.item)
+                {
+                    continue;
+                }
+                else
+                {
+                    int space = items[i] == null ? 10 : items[i].item.stack - items[i].number;
+                    if (space >= num)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        num -= space;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         public ItemStack TryPush(ItemStack stack)
         {
             for (int i = 0; i < items.Count; i++)

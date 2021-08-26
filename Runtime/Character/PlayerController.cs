@@ -8,6 +8,7 @@ namespace PotatoTools.Character
     public class PlayerController : CharacterMovementController
     {
         public PauseController pause;
+        public ItemVacuumController vacuum;
 
         public ItemInventory inventory = new ItemInventory(8);
         public float dropTime = 1f;
@@ -15,6 +16,11 @@ namespace PotatoTools.Character
 
         private DropPlatformController platform;
         private SelectableController selection;
+
+        private void Start()
+        {
+            vacuum.inventory = inventory;
+        }
 
         protected override void Update()
         {
