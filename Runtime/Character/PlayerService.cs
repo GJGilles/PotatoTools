@@ -1,4 +1,5 @@
 ﻿using PotatoTools.Inventory;
+using System;
 
 namespace PotatoTools.Character
 {
@@ -8,6 +9,11 @@ namespace PotatoTools.Character
 
         private static int money = 0;
         private static ItemInventory inventory = new ItemInventory(8);
+
+        static PlayerService()
+        {
+            FileService.Add(new Data().GetService());
+        }
 
         public static bool IsLocked() => locks > 0;
         public static void Lock() => locks++;
@@ -26,6 +32,34 @@ namespace PotatoTools.Character
         public static void AddMoney(int amount)
         {
             money += amount;
+        }
+
+
+        [Serializable]
+        public class PlayerData
+        {
+            public int money;
+            public InventoryData inventory;
+        }
+
+        public class Data : DataService<PlayerData>
+        {
+            protected override string name => "player";
+
+            protected override PlayerData GetData()
+            {
+                return new PlayerData()
+                {
+                    money = money,
+                    inventory = inventory.Save()
+                };
+            }
+
+            protected override void SetData(PlayerData data)
+            {
+                money = data.money;
+                inventory.Load(data.inventory);
+            }
         }
     }
 }

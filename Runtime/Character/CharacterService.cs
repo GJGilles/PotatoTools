@@ -13,6 +13,7 @@ namespace PotatoTools.Character
         static CharacterService()
         {
             characters = AssetLoader.LoadObjects<CharacterObject>();
+            FileService.Add(new Data().GetService());
         }
 
         public class Data : DataService<Dictionary<int, List<int>>>
