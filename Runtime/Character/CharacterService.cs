@@ -35,9 +35,9 @@ namespace PotatoTools.Character
                     if (data.ContainsKey(characters[i].GetHashCode()))
                     {
                         var c = data[characters[i].GetHashCode()];
-                        for (var j = c.Count - 1; j >= 0; j--)
+                        for (var j = 0; j < c.Count; j--)
                         {
-                            characters[i].dialogs.Push(dialogs[c[j]]);
+                            characters[i].dialogs.Add(dialogs[c[j]]);
                         }
                     }
                 }

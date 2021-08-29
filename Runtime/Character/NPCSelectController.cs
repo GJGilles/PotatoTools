@@ -1,5 +1,6 @@
 ﻿using PotatoTools.Dialog;
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace PotatoTools.Character
@@ -14,7 +15,8 @@ namespace PotatoTools.Character
             CharacterService.OnDialog.Invoke(character);
 
             var inst = Instantiate(dialog);
-            inst.dialog = character.dialogs.Pop();
+            inst.dialog = character.dialogs.Last();
+            character.dialogs.Remove(character.dialogs.Last());
         }
     }
 }

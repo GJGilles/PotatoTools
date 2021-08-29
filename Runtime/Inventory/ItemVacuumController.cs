@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 namespace PotatoTools.Inventory
 {
+    [RequireComponent(typeof(Collider2D))]
     public class ItemVacuumController : MonoBehaviour
     {
         public float range;
