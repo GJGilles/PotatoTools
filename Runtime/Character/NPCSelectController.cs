@@ -15,8 +15,7 @@ namespace PotatoTools.Character
             CharacterService.OnDialog.Invoke(character);
 
             var inst = Instantiate(dialog);
-            inst.dialog = character.dialogs.Last();
-            character.dialogs.Remove(character.dialogs.Last());
+            inst.dialog = character.PopDialog();
         }
     }
 }

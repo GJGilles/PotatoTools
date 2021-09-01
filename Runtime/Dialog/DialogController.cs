@@ -25,7 +25,7 @@ namespace PotatoTools.Dialog
         public RectTransform tArea;
         public TMPro.TMP_Text textObj;
 
-        public float speed = 0.3f;
+        public float speed = 3f;
         public int spacing = 64;
 
         private List<UnityEngine.UI.Image> characters = new List<UnityEngine.UI.Image>();
@@ -113,7 +113,6 @@ namespace PotatoTools.Dialog
             {
                 textbox = Instantiate(textObj, tArea.parent);
                 textbox.transform.SetParent(tArea);
-                textbox.alignment = (d.speaker == 0) ? TMPro.TextAlignmentOptions.TopLeft : TMPro.TextAlignmentOptions.TopRight;
                 tPos = 0;
 
                 foreach (var c in characters)
@@ -133,7 +132,7 @@ namespace PotatoTools.Dialog
             }
 
             int pos = Math.Min(Mathf.RoundToInt(tPos), d.text.Length);
-            textbox.text = characters[d.speaker].name + ": " + d.text.Substring(0, pos);
+            textbox.text = dialog.characters[d.speaker].name + ": " + d.text.Substring(0, pos);
 
             if (pos == d.text.Length)
             {

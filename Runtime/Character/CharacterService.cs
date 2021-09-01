@@ -23,7 +23,7 @@ namespace PotatoTools.Character
             protected override Dictionary<int, List<int>> GetData()
             {
                 return characters
-                  .ToDictionary(x => x.GetHashCode(), x => x.dialogs.Select(y => y.GetHashCode()).ToList());
+                  .ToDictionary(x => x.GetHashCode(), x => x.GetDialogs().Select(y => y.GetHashCode()).ToList());
             }
 
             protected override void SetData(Dictionary<int, List<int>> data)
@@ -37,7 +37,7 @@ namespace PotatoTools.Character
                         var c = data[characters[i].GetHashCode()];
                         for (var j = 0; j < c.Count; j--)
                         {
-                            characters[i].dialogs.Add(dialogs[c[j]]);
+                            characters[i].PushDialog(dialogs[c[j]]);
                         }
                     }
                 }

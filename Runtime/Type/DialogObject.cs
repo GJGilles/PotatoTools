@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace PotatoTools
 {
-    public abstract class DialogObject : ScriptableObject
+    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/DialogObject")]
+    public class DialogObject : ScriptableObject
     {
         public List<CharacterObject> characters = new List<CharacterObject>();
         public List<DialogBlock> dialogs = new List<DialogBlock>();
+        public bool looping = false;
     }
 }
