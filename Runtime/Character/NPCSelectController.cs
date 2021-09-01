@@ -12,10 +12,9 @@ namespace PotatoTools.Character
 
         public override void Select(PlayerController player)
         {
-            CharacterService.OnDialog.Invoke(character);
-
             var inst = Instantiate(dialog);
             inst.dialog = character.PopDialog();
+            CharacterService.OnDialog.Invoke(character, inst.dialog);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace PotatoTools.Character
 {
     public static class CharacterService
     {
-        public static UnityEvent<CharacterObject> OnDialog = new UnityEvent<CharacterObject>();
+        public static UnityEvent<CharacterObject, DialogObject> OnDialog = new UnityEvent<CharacterObject, DialogObject>();
         
         private static List<CharacterObject> characters = new List<CharacterObject>();
 
