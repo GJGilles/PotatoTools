@@ -10,7 +10,7 @@ namespace PotatoTools.Character
         [NonSerialized] public CharacterObject character;
         public DialogController dialog;
 
-        public override void Select(PlayerController player)
+        public override void Select()
         {
             var inst = Instantiate(dialog);
             inst.dialog = character.PopDialog();

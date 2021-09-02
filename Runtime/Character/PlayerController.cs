@@ -35,7 +35,7 @@ namespace PotatoTools.Character
 
             if (selection != null && InputManager.GetButtonTrigger(ButtonEnum.A))
             {
-                selection.Select(this);
+                selection.Select();
             }
 
             if (InputManager.GetButtonTrigger(ButtonEnum.B))
@@ -53,6 +53,7 @@ namespace PotatoTools.Character
         {
             if (collision.gameObject.TryGetComponent(out SelectableController s))
             {
+                s.Highlight(true);
                 selection = s;
             }
             if (collision.gameObject.TryGetComponent(out DropPlatformController p))
@@ -65,6 +66,7 @@ namespace PotatoTools.Character
         {
             if (collision.gameObject.TryGetComponent(out SelectableController s) && selection == s)
             {
+                s.Highlight(false);
                 selection = null;
             }
             if (collision.gameObject.TryGetComponent(out DropPlatformController p) && platform == p)

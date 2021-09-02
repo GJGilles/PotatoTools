@@ -1,10 +1,22 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.InputSystem.DualShock;
+using UnityEngine.InputSystem.Switch;
+using UnityEngine.InputSystem.XInput;
 
 namespace PotatoTools
 {
+    public enum GamepadEnum
+    {
+        PS4,
+        Xbox,
+        Switch,
+        None
+    }
+
     public enum ButtonEnum
     {
         A,
@@ -20,6 +32,17 @@ namespace PotatoTools
 
     public static class InputManager
     {
+        private static Dictionary<GamepadEnum, Dictionary<ButtonEnum, Sprite>> gamepads = new Dictionary<GamepadEnum, Dictionary<ButtonEnum, Sprite>>();
+
+        static InputManager()
+        {
+            var objs = AssetLoader.LoadObjects<GamepadObject>();
+            foreach (var g in objs)
+            {
+                gamepads[g.gamepad] = g.buttons.ToDictionary(x => x.button, x => x.spr);
+            }
+        }
+
         private static float ReadInput(List<ButtonControl> inputs)
         {
             foreach (var input in inputs)
@@ -59,23 +82,23 @@ namespace PotatoTools
                 default:
                 case ButtonEnum.A:
                     return new List<ButtonControl>() { 
-                        Gamepad.current?.aButton,
+                        Gamepad.current?.buttonSouth,
                         Keyboard.current?.zKey
                     };
                 case ButtonEnum.B:
                     return new List<ButtonControl>() {
-                        Gamepad.current?.bButton,
+                        Gamepad.current?.buttonEast,
                         Keyboard.current?.xKey,
                         Keyboard.current?.spaceKey
                     };
                 case ButtonEnum.X:
                     return new List<ButtonControl>() {
-                        Gamepad.current?.xButton,
+                        Gamepad.current?.buttonWest,
                         Keyboard.current?.eKey
                     };
                 case ButtonEnum.Y:
                     return new List<ButtonControl>() {
-                        Gamepad.current?.yButton,
+                        Gamepad.current?.buttonNorth,
                         Keyboard.current?.qKey
                     };
                 case ButtonEnum.Start:
@@ -107,6 +130,30 @@ namespace PotatoTools
             }
         }
 
+        public static GamepadEnum GetGamepadType()
+        {
+            if (Gamepad.current is DualShockGamepad)
+            {
+                return GamepadEnum.PS4;
+            }
+            else if (Gamepad.current is XInputController)
+            {
+                return GamepadEnum.Xbox;
+            }
+            else if (Gamepad.current is SwitchProControllerHID)
+            {
+                return GamepadEnum.Switch;
+            }
+            else
+            {
+                return GamepadEnum.None;
+            }
+        }
+
+        public static Sprite GetSprite(ButtonEnum button)
+        {
+            return gamepads[GetGamepadType()][button];
+        }
 
         public static float GetHorzAxis()
         {

@@ -5,11 +5,11 @@ namespace PotatoTools
 {
     public static class AssetLoader
     {
-        public static List<T> LoadObjects<T>() where T : UnityEngine.Object
+        public static List<T> LoadObjects<T>(string p = "Assets/Objects") where T : UnityEngine.ScriptableObject
         {
 #if UNITY_EDITOR
             List<T> result = new List<T>();
-            string[] guids = UnityEditor.AssetDatabase.FindAssets("t:" + typeof(T).ToString(), new string[] { "Assets/Objects" });
+            string[] guids = UnityEditor.AssetDatabase.FindAssets("t:" + typeof(T).ToString(), new string[] { p });
             foreach (string g in guids)
             {
                 string path = UnityEditor.AssetDatabase.GUIDToAssetPath(g);
