@@ -118,7 +118,7 @@ MonoBehaviour:
   cArea: {fileID: 6136237457048079163}
   tArea: {fileID: 678942066509672504}
   textObj: {fileID: 7787428209240752603, guid: 232dfec3187410e40ade22b50b7f6248, type: 3}
-  speed: 5
+  speed: 20
   spacing: 64
 --- !u!1 &6136237456273945287
 GameObject:

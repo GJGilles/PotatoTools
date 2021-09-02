@@ -5,7 +5,7 @@ namespace PotatoTools
 {
     public static class CommonAnimation
     {
-        public static bool DampedMove(Vector2 a, Vector2 b, out Vector2 c, float rate = 0.03f, float threshold = 0.1f) 
+        public static bool DampedMove(Vector2 a, Vector2 b, out Vector2 c, float rate = 0.08f, float threshold = 0.5f) 
         {
             rate *= Time.deltaTime * 100;
             c = Vector2.Lerp(a, b, rate);
