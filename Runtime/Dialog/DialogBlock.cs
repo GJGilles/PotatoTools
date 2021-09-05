@@ -6,7 +6,7 @@ namespace PotatoTools.Dialog
     [Serializable]
     public class DialogBlock
     {
-        [TextArea]
+        [TextArea(5, 6)]
         public string text;
         public int speaker;
     }

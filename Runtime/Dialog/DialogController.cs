@@ -23,15 +23,19 @@ namespace PotatoTools.Dialog
         public RectTransform area;
         public RectTransform cArea;
         public RectTransform tArea;
+        public TMPro.TMP_Text nameArea;
         public TMPro.TMP_Text textObj;
 
         public float speed = 3f;
         public int spacing = 64;
+        public int lines = 5;
 
         private List<UnityEngine.UI.Image> characters = new List<UnityEngine.UI.Image>();
 
         private int dIdx = 0;
         private float tPos = 0f;
+        private int lMax = 0;
+        private float height = 0;
         private TMPro.TMP_Text textbox;
         private DialogStateEnum state = DialogStateEnum.Start;
 
@@ -111,9 +115,11 @@ namespace PotatoTools.Dialog
 
             if (textbox == null)
             {
+                nameArea.text = dialog.characters[d.speaker].name;
                 textbox = Instantiate(textObj, tArea.parent);
                 textbox.transform.SetParent(tArea);
                 tPos = 0;
+                lMax = lines - 1;
 
                 foreach (var c in characters)
                 {
@@ -122,9 +128,9 @@ namespace PotatoTools.Dialog
                 characters[d.speaker].color = Color.white;
             }
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.A))
+            if (InputManager.GetButtonHeld(ButtonEnum.A) > 0)
             {
-                tPos = d.text.Length;
+                tPos += 4 * speed * Time.deltaTime;
             }
             else
             {
@@ -132,12 +138,24 @@ namespace PotatoTools.Dialog
             }
 
             int pos = Math.Min(Mathf.RoundToInt(tPos), d.text.Length);
-            textbox.text = dialog.characters[d.speaker].name + ": " + d.text.Substring(0, pos);
+            string text = d.text.Substring(0, pos);
+            textbox.text = text;
 
-            if (pos == d.text.Length)
+            if (textbox.textInfo.lineCount >= lMax)
             {
+                float h = tArea.parent.GetComponent<RectTransform>().rect.height;
+                height += h * ((lines / 2) + 1f) / lines;
+                textbox.text = textbox.text.Substring(0, textbox.text.Length - 1);
+                lMax += (lines / 2) + 1;
+                state = DialogStateEnum.Paused;
+            }
+            else if (pos == d.text.Length)
+            {
+                float h = tArea.parent.GetComponent<RectTransform>().rect.height;
+                height += h;
                 textbox = null;
                 state = DialogStateEnum.Paused;
+                dIdx++;
             }
         }
 
@@ -145,7 +163,6 @@ namespace PotatoTools.Dialog
         {
             if (InputManager.GetButtonTrigger(ButtonEnum.A))
             {
-                dIdx++;
                 if (dIdx >= dialog.dialogs.Count)
                 {
                     state = DialogStateEnum.Done;
@@ -153,23 +170,19 @@ namespace PotatoTools.Dialog
                 else
                 {
                     state = DialogStateEnum.Slide;
-                    var obj = textObj.GetComponent<RectTransform>();
-                    tArea.sizeDelta = new Vector3(tArea.sizeDelta.x, obj.sizeDelta.y * (1 + dIdx * 2), 0);
                 }
             }
         }
 
         private void SlideState()
         {
-            float h = tArea.parent.GetComponent<RectTransform>().rect.height;
-
-            if (!CommonAnimation.DampedMove(tArea.anchoredPosition, new Vector2(0, h * dIdx), out Vector2 c))
+            if (!CommonAnimation.DampedMove(tArea.anchoredPosition, new Vector2(0, height), out Vector2 c))
             {
                 tArea.anchoredPosition = c;
             }
             else
             {
-                tArea.anchoredPosition = new Vector2(0, h * dIdx);
+                tArea.anchoredPosition = new Vector2(0, height);
                 state = DialogStateEnum.Reading;
             }
         }
