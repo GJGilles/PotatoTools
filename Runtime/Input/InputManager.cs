@@ -28,6 +28,10 @@ namespace PotatoTools
         L2,
         R1,
         R2,
+        DDown,
+        DRight,
+        DLeft,
+        DUp
     }
 
     public static class InputManager
@@ -125,6 +129,30 @@ namespace PotatoTools
                     return new List<ButtonControl>() {
                         Gamepad.current?.rightTrigger,
                         Keyboard.current?.digit4Key
+                    };
+                case ButtonEnum.DDown:
+                    return new List<ButtonControl>()
+                    {
+                        Gamepad.current?.dpad.down,
+                        Keyboard.current?.sKey
+                    };
+                case ButtonEnum.DRight:
+                    return new List<ButtonControl>()
+                    {
+                        Gamepad.current?.dpad.right,
+                        Keyboard.current?.dKey
+                    };
+                case ButtonEnum.DLeft:
+                    return new List<ButtonControl>()
+                    {
+                        Gamepad.current?.dpad.left,
+                        Keyboard.current?.aKey
+                    };
+                case ButtonEnum.DUp:
+                    return new List<ButtonControl>()
+                    {
+                        Gamepad.current?.dpad.up,
+                        Keyboard.current?.wKey
                     };
 
             }
