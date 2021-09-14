@@ -20,5 +20,14 @@ namespace PotatoTools
             return new List<T>(Resources.FindObjectsOfTypeAll<T>());
 #endif
         }
+
+        public static T LoadAsset<T>(string p) where T : UnityEngine.Object
+        {
+#if UNITY_EDITOR
+            return UnityEditor.AssetDatabase.LoadAssetAtPath<T>("Assets/" + p);
+#else
+            return Resources.Load<T>(p);
+#endif
+        }
     }
 }
