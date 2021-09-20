@@ -7,6 +7,8 @@ namespace PotatoTools.Character
         public SpriteRenderer spr;
         public Animator anim;
 
+        public AudioSource step;
+
         private enum CharacterAnimEnum
         {
             IsWalk
@@ -16,6 +18,11 @@ namespace PotatoTools.Character
         {
             anim.SetBool(CharacterAnimEnum.IsWalk.ToString(), walking);
             spr.flipX = walking && flip;
+        }
+
+        public void PlayStep()
+        {
+            step.Play();
         }
     }
 }

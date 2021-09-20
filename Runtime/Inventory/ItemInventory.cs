@@ -254,6 +254,22 @@ namespace PotatoTools.Inventory
             return stack;
         }
 
+        public ItemStack TryPull()
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i] == null)
+                {
+                    continue;
+                }
+                else
+                {
+                    return Remove(StackMoveEnum.All, i);
+                }
+            }
+            return null;
+        }
+
         public void SetPermanent(int idx, ItemObject item)
         {
             infinite = true;
