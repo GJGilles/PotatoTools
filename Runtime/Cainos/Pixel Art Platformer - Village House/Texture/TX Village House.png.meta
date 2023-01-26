@@ -477,7 +477,7 @@ TextureImporter:
       213: 21300314
     second: TX Village House Attic Brick
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -494,10 +494,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -536,19 +537,20 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -560,7 +562,43 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 1
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -3850,6 +3888,163 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TX Village House Struct Diag Shadow A: 21300022
+      TX Village House Pillar Cross B: 21300010
+      TX Village House Chimney A: 21300054
+      TX Village House Struct Diag 3X3 A: 21300064
+      TX Village House Door A: 21300014
+      TX Village House Roof 5X5 Wood: 21300282
+      TX Village House Hook: 21300168
+      TX Village House Lantern A Off: 21300122
+      TX Village House Window E: 21300128
+      TX Village House Roof 6X2 Brick: 21300214
+      TX Village House Shadow Square: 21300074
+      TX Village House Sign Icon Blacksmith: 21300052
+      TX Village House Shadow Gradient Vert: 21300178
+      TX Village House Banner Red: 21300304
+      TX Village House Roof 5X5 Shadow: 21300286
+      TX Village House Roof 5X5: 21300278
+      TX Village House Fence A: 21300060
+      TX Village House Support 1X1 C: 21300062
+      TX Village House Roof 6X2 Shadow: 21300038
+      TX Village House Door Frame Wood Side: 21300108
+      TX Village House Chimney B: 21300088
+      TX Village House Roof 4X2: 21300078
+      TX Village House Roof 5X2: 21300202
+      TX Village House Roof 6X2 Wood: 21300212
+      TX Village House Window E Side: 21300234
+      TX Village House Struct Hori C: 21300034
+      TX Village House Struct Diag 3X2 B: 21300114
+      TX Village House Pillar Diag A: 21300152
+      TX Village House Stair Brick Front: 21300172
+      TX Village House Window I Side: 21300256
+      TX Village House Roof Rainshed X2: 21300186
+      TX Village House Roof Shed Side: 21300182
+      TX Village House Flower Pot Hanger: 21300250
+      TX Village House Parterre Plant D: 21300270
+      TX Village House Pillar Cross Round A: 21300102
+      TX Village House Lantern Base: 21300124
+      TX Village House Window F Side: 21300226
+      TX Village House Attic Brick: 21300314
+      TX Village House Roof 4X2 Shadow: 21300080
+      TX Village House Banner Green: 21300306
+      TX Village House Pillar X3 C: 21300002
+      TX Village House Pulley: 21300164
+      TX Village House Window F: 21300144
+      TX Village House Window J: 21300292
+      TX Village House Struct Diag 3X3 B: 21300066
+      TX Village House Windmill Fan B: 21300298
+      TX Village House Struct Hori B: 21300032
+      TX Village House Window C Side: 21300132
+      TX Village House Support 1X1 B: 21300160
+      TX Village House Window HA: 21300174
+      TX Village House Roof 4X2 Wood: 21300180
+      TX Village House Attic: 21300090
+      TX Village House Shadow Tri B: 21300200
+      TX Village House Windmill Center: 21300300
+      TX Village House Roof 6X2: 21300036
+      TX Village House Roof Shed Side Shadow: 21300184
+      TX Village House Window I: 21300254
+      TX Village House Roof Half 3X2 Shadow: 21300138
+      TX Village House Door B Frame Side: 21300236
+      TX Village House Roof Half 3X2 Brick: 21300170
+      TX Village House Roof 5X2 Shadow: 21300208
+      TX Village House Struct Diag 3X3 C: 21300238
+      cainos@cainos.net: 21300280
+      TX Village House Nail: 21300240
+      TX Village House Chain: 21300046
+      TX Village House Roof 5X2 Brick: 21300206
+      TX Village House Roof Tile 3X2: 21300308
+      TX Village House Window HB: 21300194
+      TX Village House Flower Pot C: 21300246
+      TX Village House Parterre Bed B: 21300272
+      TX Village House Fence B: 21300126
+      TX Village House Door C: 21300150
+      TX Village House Flower Pot D: 21300248
+      TX Village House Sign Icon Bear: 21300050
+      TX Village House Roof 6X3 Wood: 21300216
+      TX Village House Roof 5X2 Wood: 21300204
+      TX Village House Roof 6X3 Brick: 21300218
+      TX Village House Window G: 21300158
+      TX Village House Roof Tile 6X2: 21300076
+      TX Village House Parterre Bed D: 21300276
+      TX Village House Pillar Cross C: 21300004
+      TX Village House Stair: 21300146
+      TX Village House Chimney C: 21300134
+      TX Village House Attic Shadow: 21300094
+      TX Village House Window B Side: 21300224
+      TX Village House Window C: 21300096
+      TX Village House Beam X6 B: 21300026
+      TX Village House Pillar X3 B: 21300006
+      TX Village House Attic Side: 21300100
+      TX Village House Lantern B Off: 21300192
+      TX Village House Attic Side Wood: 21300290
+      TX Village House Window D: 21300110
+      TX Village House Door B Frame: 21300140
+      TX Village House Roof Rainshed X2 Shadow: 21300188
+      TX Village House Pillar Cross A: 21300012
+      TX Village House Pillar Cross Round C: 21300106
+      TX Village House Door A Shadow: 21300016
+      TX Village House Sign Icon Potion: 21300056
+      TX Village House Shadow Tri A: 21300198
+      TX Village House Parterre Plant A: 21300262
+      TX Village House Window J Side: 21300294
+      TX Village House Beam X6 A: 21300024
+      TX Village House Wall Brick X3: 21300252
+      TX Village House Banner Blue: 21300288
+      TX Village House Plank Floor: 21300058
+      TX Village House Door B: 21300142
+      TX Village House Wall Brick X4: 21300176
+      TX Village House Roof Tile 3X1: 21300210
+      TX Village House Parterre Plant C: 21300268
+      TX Village House Window D Side: 21300232
+      TX Village House Base 9X1: 21300070
+      TX Village House Roof Half 3X2: 21300136
+      TX Village House Pillar Diag B: 21300154
+      TX Village House Pillar X3 A: 21300008
+      TX Village House Wall Brick 4X3: 21300098
+      TX Village House Attic Side Shadow: 21300130
+      TX Village House Struct Diag 3X2 A: 21300112
+      TX Village House Window HC: 21300196
+      TX Village House Sign Hanger: 21300044
+      TX Village House Parterre Bed A: 21300264
+      TX Village House Rope: 21300166
+      TX Village House Flower Pot B: 21300244
+      TX Village House Shadow Stair: 21300148
+      TX Village House Sign Icon Weapon: 21300048
+      TX Village House Rod Hori X2: 21300040
+      TX Village House Roof Window Side Shadow: 21300086
+      TX Village House Window B: 21300072
+      TX Village House Struct Hori A: 21300030
+      TX Village House Sign: 21300042
+      TX Village House Roof Half 3X2 Wood: 21300220
+      TX Village House Shadow Diag: 21300068
+      TX Village House Window G Side: 21300228
+      TX Village House Attic Side Brick: 21300310
+      TX Village House Struct Diag 3X2 C: 21300302
+      TX Village House Attic Wood: 21300312
+      TX Village House Beam X6 C: 21300028
+      TX Village House Support 1X1 A: 21300162
+      TX Village House Roof 4X2 Brick: 21300230
+      TX Village House Parterre Bed C: 21300274
+      TX Village House Window Shed Side: 21300260
+      TX Village House Attic Roof Shadow: 21300092
+      TX Village House Parterre Plant B: 21300266
+      TX Village House Lantern B On: 21300190
+      TX Village House Roof Window Side: 21300084
+      TX Village House Window Shed: 21300258
+      TX Village House Pillar Cross Round B: 21300104
+      TX Village House Window A Side: 21300222
+      TX Village House Windmill Fan A: 21300296
+      TX Village House Lantern A On: 21300120
+      TX Village House Flower Pot A: 21300242
+      TX Village House Pillar Diag C: 21300156
+      TX Village House Roof 5X5 Brick: 21300284
+      TX Village House Window A: 21300018
+      TX Village House Roof 6X3: 21300116
+      TX Village House Outfall: 21300082
+      TX Village House Roof 6X3 Shadow: 21300118
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
