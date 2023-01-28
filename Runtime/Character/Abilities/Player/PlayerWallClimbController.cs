@@ -7,57 +7,41 @@ namespace PotatoTools.Character
 {
     [RequireComponent(typeof(PlayerController))]
     [RequireComponent(typeof(Collider2D))]
-    [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerWallClimbController : CharacterAbilityController
     {
         [SerializeField] private float speed = 2f;
         [SerializeField] private float timeCancel = 0.2f;
 
         private ClimbingWallController climb;
-        private float gravity;
         private float lastCancel = 0.3f;
 
-        private Collider2D col;
-        private Rigidbody2D rb;
+        private PlayerController player;
 
         private void Start()
         {
-            col = GetComponent<Collider2D>();
-            rb = GetComponent<Rigidbody2D>();
+            player = GetComponent<PlayerController>();
         }
 
         private void Update()
         {
-            if (climb != null && lastCancel < timeCancel)
-            {
-                rb.gravityScale = gravity;
-            }
-            else if (climb != null)
-            {
-                rb.gravityScale = 0;
-
-                Vector2 move = InputManager.GetMovement();
-                int dir = Mathf.RoundToInt(move.y);
-                rb.velocity = new Vector2(rb.velocity.x, dir * speed);
-            }
+            lastCancel += Time.deltaTime;
         }
 
-        private void OnTriggerEnter2D()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (col.gameObject.TryGetComponent(out ClimbingWallController c))
+            if (collision.gameObject.TryGetComponent(out ClimbingWallController c))
             {
                 climb = c;
-                gravity = rb.gravityScale;
-                rb.gravityScale = 0;
+                player.IgnoreGravity();
             }
         }
 
-        private void OnTriggerExit2D()
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            if (col.gameObject.TryGetComponent(out ClimbingWallController c) && climb == c)
+            if (collision.gameObject.TryGetComponent(out ClimbingWallController c) && climb == c)
             {
                 climb = null;
-                rb.gravityScale = gravity;
+                player.ResetGravity();
             }
         }
 
@@ -66,9 +50,26 @@ namespace PotatoTools.Character
             return climb != null && lastCancel > timeCancel;
         }
 
+        public override void WhileActive()
+        {
+            if (InputManager.GetButtonHeld(ButtonEnum.B) > 0)
+            {
+                player.ResetGravity();
+                lastCancel = 0;
+            }
+            else
+            {
+                player.IgnoreGravity();
+
+                Vector2 move = InputManager.GetMovement();
+                int x = Mathf.RoundToInt(move.x);
+                int y = Mathf.RoundToInt(move.y);
+                player.MoveSmooth(x * speed, y * speed);
+            }
+        }
+
         public override void Play(Animator anim)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

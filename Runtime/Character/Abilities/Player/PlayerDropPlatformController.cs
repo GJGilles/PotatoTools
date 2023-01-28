@@ -59,6 +59,11 @@ namespace PotatoTools.Character
             return platform != null && lastInput < timeInput;
         }
 
+        public override void WhileActive()
+        {
+
+        }
+
         public override void Play(Animator anim)
         {
             throw new System.NotImplementedException();

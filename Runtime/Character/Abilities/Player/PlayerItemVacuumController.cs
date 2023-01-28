@@ -19,6 +19,11 @@ namespace PotatoTools.Character
             return false;
         }
 
+        public override void WhileActive()
+        {
+
+        }
+
         public override void Play(Animator anim)
         {
             throw new System.NotImplementedException();

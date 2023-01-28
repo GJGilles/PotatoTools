@@ -7,7 +7,7 @@ using UnityEngine;
 namespace PotatoTools.Character
 {
     [RequireComponent(typeof(Animator))]
-    public class CharacterController : MonoBehaviour
+    public class ActorController : MonoBehaviour
     {
         private Animator animator;
 
@@ -18,11 +18,15 @@ namespace PotatoTools.Character
 
         protected virtual void Update()
         {
-            var abilities = new List<CharacterAbilityController>(GetComponents<CharacterAbilityController>()); //Need to reverse?
+            var abilities = new List<CharacterAbilityController>(GetComponents<CharacterAbilityController>());
+            abilities.Reverse();
+
             foreach (var a in abilities)
             {
-                if (a.IsActive())
+                if (a.enabled && a.IsActive())
                 {
+                    a.WhileActive();
+
                     animator.runtimeAnimatorController = a.animator;
                     a.Play(animator);
                     break;

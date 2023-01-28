@@ -10,6 +10,8 @@ namespace PotatoTools.Character
 
         public abstract bool IsActive();
 
+        public abstract void WhileActive();
+
         public abstract void Play(Animator anim);
     }
 }
